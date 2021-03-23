@@ -3,3 +3,6 @@
 * [The RX procedure is lighter intend to improve the performance]
 * [The first branch josright123-patch-1 does format the source code dm905.c (dm9051.c only)]
 * [ for readable by on-line formatter -- (https://codebeautify.org/c-formatter-beautifier)]
+
+## modify done, for c-formatter-beaytifier result some compiler errors, anyhow it can well readable,
+* [After handle the compiler errors, It can work very good in rpi2 test.]
