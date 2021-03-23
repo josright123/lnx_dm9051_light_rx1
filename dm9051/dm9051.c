@@ -194,7 +194,7 @@ static u32 dm9000_get_link(struct net_device * dev) {
   return (u32) dm -> linkBool;
 }
 
-#define DM_EEPROM_MAGIC(0x444D394B)
+#define DM_EEPROM_MAGIC (0x444D394B)
 
 static int dm9000_get_eeprom_len(struct net_device * dev) {
   return 128;
@@ -1409,7 +1409,8 @@ dm9051_continue_xmit_inRX(board_info_t * db) //dm9051_continue_poll_xmit
       dev_kfree_skb(tx_skb);
       db -> bt.local_cntTXREQ++;
       db -> bt.local_cntLOOP++;
-      #if 0 {
+      #if 0 
+      {
         u16 mdwr;
         u16 txmr;
         while (ior(db, DM9051_TCR) & TCR_TXREQ)
@@ -2337,7 +2338,8 @@ static int dm9051_skbx(board_info_t * db, int nRR) {
     if ((skb = dev_alloc_skb(RxLen + 4 + ASL_RSRV_RX_HDR_LEN)) == NULL)
       #else
     if ((skb = dev_alloc_skb(RxLen + 4)) == NULL) // SKB_size= RxLen + 4
-      #endif {
+      #endif
+      {
         printk("dm9051 [!ALLOC skb size %d fail]\n", RxLen + 4);
         return skbRR; //nR;
       }
@@ -2448,9 +2450,9 @@ static int dm9051_sch_cnt1(u16 getVAL, u16 offset) // large equ +1 (as increasme
 // [ 688 - 967 ]
 
 //Testing...JJ5_DTS
-#define GLUE_LICENSE_PHYPOLL(3 + 2)
-#define GLUE_LICENSE_INT(3 + 1)
-#define GLUE_LICENSE_LE_EXPIRE(3 - 1)
+#define GLUE_LICENSE_PHYPOLL (3 + 2)
+#define GLUE_LICENSE_INT (3 + 1)
+#define GLUE_LICENSE_LE_EXPIRE (3 - 1)
 
 static void
 dm9051_INTPschedule_isr(board_info_t * db, int sch_cause) {
